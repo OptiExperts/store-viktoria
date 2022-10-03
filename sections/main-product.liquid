@@ -74,8 +74,9 @@
                     if media_position > 1
                       assign lazy_load = true
                     endif
-                    render 'product-thumbnail', media: media, position: media_position, loop: section.settings.enable_video_looping, modal_id: section.id, xr_button: true, media_width: media_width, lazy_load: lazy_load
+                    render 'product-thumbnail', media | video_tag: controls: true, autoplay: true, height: "600px", media: media, position: media_position, loop: section.settings.enable_video_looping, modal_id: section.id, xr_button: true, media_width: media_width, 
                   -%}
+  
                 </li>
               {%- endunless -%}
             {%- endfor -%}
@@ -129,6 +130,7 @@
                     aria-controls="GalleryViewer-{{ section.id }}"
                     aria-describedby="Thumbnail-{{ section.id }}-0"
                   >
+
                     <img id="Thumbnail-{{ section.id }}-0" srcset="{% if featured_media.preview_image.width >= 54 %}{{ featured_media.preview_image | image_url: width: 54 }} 54w,{% endif %}
                       {% if featured_media.preview_image.width >= 74 %}{{ featured_media.preview_image | image_url: width: 74 }} 74w,{% endif %}
                       {% if featured_media.preview_image.width >= 104 %}{{ featured_media.preview_image | image_url: width: 104 }} 104w,{% endif %}
@@ -153,7 +155,6 @@
                     capture media_index
                       if media.media_type == 'model'
                         increment model_index
-                        <h1>this is a test</h1>
                       elsif media.media_type == 'video' or media.media_type == 'external_video'
                         increment video_index
                       elsif media.media_type == 'image'
