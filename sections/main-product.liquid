@@ -129,6 +129,7 @@
                     aria-controls="GalleryViewer-{{ section.id }}"
                     aria-describedby="Thumbnail-{{ section.id }}-0"
                   >
+                  <h1>this is a test</h1>
                     <img id="Thumbnail-{{ section.id }}-0" srcset="{% if featured_media.preview_image.width >= 54 %}{{ featured_media.preview_image | image_url: width: 54 }} 54w,{% endif %}
                       {% if featured_media.preview_image.width >= 74 %}{{ featured_media.preview_image | image_url: width: 74 }} 74w,{% endif %}
                       {% if featured_media.preview_image.width >= 104 %}{{ featured_media.preview_image | image_url: width: 104 }} 104w,{% endif %}
