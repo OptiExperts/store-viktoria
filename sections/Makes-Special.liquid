@@ -1,0 +1,84 @@
+<div class="Makes-Special_main_wrapper">
+  <div class="page-width">
+    <div class="Makes-Special_internal_wrapper">
+      <div class="text_side">
+        {% if section.settings.hd != blank %}
+          <h2 class="image-with-text__heading h2">{{ section.settings.hd }}</h2>
+        {% endif %}
+        {% if section.settings.dsc != blank %}
+          <div class="text_side_dsc">{{ section.settings.dsc }}</div>
+        {% endif %}
+      </div>
+
+      <div class="points_side">
+        <div class="points_hd">
+          <p>Sans douleur</p>
+          <p>Réutilisable</p>
+          <p>Exfolie la peau</p>
+          <p>Écologique</p>
+          <p>Coûteux</p>
+        </div>
+        <div class="first_wrapper">
+          {% if section.settings.table_hd_1 != blank %}
+            <div class="first_wrapper_hd"><img src="{{ section.settings.table_hd_1 | img_url: 'master' }}"></div>
+          {% endif %}
+          <p><img class="mark_icon" src="https://cdn.shopify.com/s/files/1/0610/2627/1399/files/check_1check-v1642658295149.png?v=1662022494"></p>
+          <p><img class="mark_icon" src="https://cdn.shopify.com/s/files/1/0610/2627/1399/files/check_1check-v1642658295149.png?v=1662022494"></p>
+          <p><img class="mark_icon" src="https://cdn.shopify.com/s/files/1/0610/2627/1399/files/check_1check-v1642658295149.png?v=1662022494"></p>
+          <p><img class="mark_icon" src="https://cdn.shopify.com/s/files/1/0610/2627/1399/files/check_1check-v1642658295149.png?v=1662022494"></p>
+          <p><img class="mark_icon" src="https://cdn.shopify.com/s/files/1/0610/2627/1399/files/cross-v1642658299531.svg?v=1662022495"></p>
+        </div>
+        
+        <div class="others_wrapper">
+          {% if section.settings.table_hd_2 != blank %}
+            <div class="first_wrapper_hd"><p>{{ section.settings.table_hd_2 }}</p></div>
+          {% endif %}
+          <p><img class="mark_icon" src="https://cdn.shopify.com/s/files/1/0610/2627/1399/files/cross-v1642658299531.svg?v=1662022495"></p>
+          <p><img class="mark_icon" src="https://cdn.shopify.com/s/files/1/0610/2627/1399/files/cross-v1642658299531.svg?v=1662022495"></p>
+          <p><img class="mark_icon" src="https://cdn.shopify.com/s/files/1/0610/2627/1399/files/cross-v1642658299531.svg?v=1662022495"></p>
+          <p><img class="mark_icon" src="https://cdn.shopify.com/s/files/1/0610/2627/1399/files/cross-v1642658299531.svg?v=1662022495"></p>
+          <p><img class="mark_icon" src="https://cdn.shopify.com/s/files/1/0610/2627/1399/files/check_1check-v1642658295149.png?v=1662022494"></p>
+        </div>
+        
+      </div>
+      
+    </div>
+  </div>
+</div>
+
+{% schema %}
+
+{
+    "name": "Makes-Special",
+    "class": "Makes-Special",
+    "settings": [
+    {
+      "id": "hd",
+      "type": "text",
+      "label": "Heading"
+    },
+    {
+      "id": "dsc",
+      "type": "text",
+      "label": "Description"
+    },
+    {
+      "id": "table_hd_1",
+      "type": "image_picker",
+      "label": "Image for Table heading 1"
+    },
+      {
+      "id": "table_hd_2",
+      "type": "text",
+      "label": "Text for Table Heading 2"
+    }
+    ],
+    "presets": [
+        {
+            "name": "Makes-Special",
+            "category": "Text"
+        }
+    ]
+}
+
+{% endschema %}
